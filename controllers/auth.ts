@@ -51,7 +51,9 @@ export const login = async (req: Request, res: Response):Promise<void> => {
       return
     }
 
+    console.log("hola1")
     const validarPassword = bcryptjs.compareSync(password, usuario.password)
+    console.log("hola2")
 
     if(!validarPassword){
       res.status(401).json({
